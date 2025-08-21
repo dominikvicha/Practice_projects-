@@ -21,7 +21,7 @@ def user_choice1(): # chybí podmínka ve které bude uživatel upozorněn na to
         attempts_number = 0  
             
         while True:
-            user_guess = input("Try to guess the number or 'q' to close: ")
+            user_guess = input("Try to guess the number or 'q' to close:")
 
             if user_guess.lower() == "q":
                 return
@@ -38,11 +38,11 @@ def user_choice1(): # chybí podmínka ve které bude uživatel upozorněn na to
                 return
 
             elif user_guess < user_choice_number:
-                print("Try to guess higher number.")
+                print("Wrong. Try to guess higher number.")
                 print("Your attempt number is:", attempts_number)
                 
             else: # user_guess > user_choice_number
-                print("Try to guess lower number.")
+                print("Wrong. Try to guess lower number.")
                 print("Your attempt number is:", attempts_number)
 
 def main():
