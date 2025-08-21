@@ -20,6 +20,7 @@ while True:
         print("Youve selected range 0-10.")
         user_choice_number = random.randrange(11)
 
+
         while True:
             user_guess = input("Try to guess the number or 'q' to close: ")
             
