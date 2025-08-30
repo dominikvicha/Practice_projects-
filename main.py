@@ -20,13 +20,13 @@ def user_choice1(user_choice):
         attempts_number = 0
             
         while True:
-            user_guess = input("Try to guess the number or 'q' to exit Guessing game to choose the new range. Or 'exit' to leave the programm.")
+            user_guess = input("Try to guess the number or 'q' to exit Guessing game to choose the new range. Or 'qq' to leave the programm.")
 
             if user_guess.lower() == "q":       #exiting the guessing game 
                 return
             
-            if user_guess.lower() == "exit":
-                exit() 
+            if user_guess.lower() == "qq":
+                return
                 
             if not user_guess.isdigit():
                 print("You need to select just independent integer number.")
@@ -64,6 +64,10 @@ def main():
         else:
             print("Invalid choice. Please type 0-10, 0-100 or 'quit'.")
 
+        result = user_choice1(user_choice)
+        if result == "qq":
+            break
+
 if __name__ == "__main__":
     main()
 
@@ -97,9 +101,13 @@ while True: (outer loop)
 - return stops the function (and everything inside, including loops)
     - control goes where the function was called (no matter how many loops are there.)
 
+3. ADD exit() 
+- function is good but: 
+    - ends program, even if theres clieanup or other code to run later 
+    - example - adding another range it wouldnt work. 
 
-
-
+if user_guess.lower() == "qq":
+                exit()  
 
 
 """
