@@ -18,7 +18,7 @@ def user_choice1(): # chybí podmínka ve které bude uživatel upozorněn na to
     if user_choice == "0-10":
         print("Youve selected range 0-10.")
         user_choice_number = random.randrange(11)
-        attempts_number = 0  
+        attempts_number = 0
             
         while True:
             user_guess = input("Try to guess the number or 'q' to close:")
@@ -59,7 +59,7 @@ def main():
             print("Leaving the game.")
             break
         else:
-            print("Invalid chocie. Please type 0-10, 0-100 or q.")
+            print("Invalid choice. Please type 0-10, 0-100 or q.")
 
 if __name__ == "__main__":
     main()
