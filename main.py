@@ -13,6 +13,7 @@ print(task_assignment)
 
 def user_choice1(user_choice): 
 
+# pokaždé co se vypíše user_gueess input tak by bylo fajn tam přidat nějaké znaky -> ("-*6")
 
     if user_choice == "0-10":
         print("Youve selected range 0-10.")
@@ -20,9 +21,9 @@ def user_choice1(user_choice):
         attempts_number = 0
             
         while True:
-            user_guess = input("Try to guess the number."
-            "Or 'q' to exit Guessing game to choose the new range. " 
-            "Or 'qq' to leave the programm.")
+            user_guess = input("""Try to guess the number.
+Or 'q' to exit Guessing game to choose the new range. 
+Or 'qq' to leave the programm.""")
 
             if user_guess.lower() == "q":       #exiting the guessing game 
                 return
