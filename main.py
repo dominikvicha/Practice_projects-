@@ -64,9 +64,6 @@ def main():
         else:
             print("Invalid choice. Please type 0-10, 0-100 or 'quit'.")
 
-        result = user_choice1(user_choice)
-        if result == "qq":
-            break
 
 if __name__ == "__main__":
     main()
