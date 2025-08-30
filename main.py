@@ -20,13 +20,15 @@ def user_choice1(user_choice):
         attempts_number = 0
             
         while True:
-            user_guess = input("Try to guess the number or 'q' to exit Guessing game to choose the new range. Or 'qq' to leave the programm.")
+            user_guess = input("Try to guess the number."
+            "Or 'q' to exit Guessing game to choose the new range. " 
+            "Or 'qq' to leave the programm.")
 
             if user_guess.lower() == "q":       #exiting the guessing game 
                 return
             
             if user_guess.lower() == "qq":
-                return
+                return "quit"                   #program exits completly (stop the guessing game, sending the messege "quit" back to the main() -> then main reads that..)
                 
             if not user_guess.isdigit():
                 print("You need to select just independent integer number.")
@@ -53,17 +55,23 @@ def main():
     while True:
 
         user_choice = input("Select the range 0-10 or 0-100 or 'quit' to leave.")
+      
 
         if user_choice == "0-10":
-            user_choice1(user_choice)
+            #user_choice1(user_choice)                  #if i dont want to shut down the programm after i select the range. 
+            result = user_choice1(user_choice)
+            if result == "quit":
+                print("Leaving the game...")
+                break
         elif user_choice == "0-100":
             break
         elif user_choice == "quit":
             print("Leaving the game.")
             break
+        
         else:
             print("Invalid choice. Please type 0-10, 0-100 or 'quit'.")
-
+    
 
 if __name__ == "__main__":
     main()
@@ -105,6 +113,11 @@ while True: (outer loop)
 
 if user_guess.lower() == "qq":
                 exit()  
+
+
+4. LOGIC BEHIND return "quit" 
+- in case you dont want to go back where the function is called
+- inside the while loop i can shut down the program 
 
 
 """
