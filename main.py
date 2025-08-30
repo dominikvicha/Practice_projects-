@@ -9,10 +9,9 @@ Your task is to guess the number in the selected range.
 You can select range 0-10 or 0-100.
             """
 print(task_assignment)
-                
-user_choice = input("Select the range 0-10 or 0-100 or select 'q' to leave: ") 
+                 
 
-def user_choice1(): # chybí podmínka ve které bude uživatel upozorněn na to že zvolil číslo mimo range. 
+def user_choice1(user_choice): 
 
 
     if user_choice == "0-10":
@@ -21,10 +20,13 @@ def user_choice1(): # chybí podmínka ve které bude uživatel upozorněn na to
         attempts_number = 0
             
         while True:
-            user_guess = input("Try to guess the number or 'q' to close:")
+            user_guess = input("Try to guess the number or 'q' to exit Guessing game to choose the new range. Or 'exit' to leave the programm.")
 
-            if user_guess.lower() == "q":
+            if user_guess.lower() == "q":       #exiting the guessing game 
                 return
+            
+            if user_guess.lower() == "exit":
+                exit() 
                 
             if not user_guess.isdigit():
                 print("You need to select just independent integer number.")
@@ -34,7 +36,8 @@ def user_choice1(): # chybí podmínka ve které bude uživatel upozorněn na to
             attempts_number += 1  
                 
             if user_guess == user_choice_number:
-                print("You guessed the correct number. ")
+                print("You guessed the correct number.")
+                print("Your score is:", attempts_number)
                 return
 
             elif user_guess < user_choice_number:
@@ -49,17 +52,17 @@ def main():
 
     while True:
 
-        user_choice = input("Select the range 0-10 or 0-100 or 'q' to leave.")
+        user_choice = input("Select the range 0-10 or 0-100 or 'quit' to leave.")
 
         if user_choice == "0-10":
-            user_choice1()
+            user_choice1(user_choice)
         elif user_choice == "0-100":
             break
-        elif user_choice == "q":
+        elif user_choice == "quit":
             print("Leaving the game.")
             break
         else:
-            print("Invalid choice. Please type 0-10, 0-100 or q.")
+            print("Invalid choice. Please type 0-10, 0-100 or 'quit'.")
 
 if __name__ == "__main__":
     main()
