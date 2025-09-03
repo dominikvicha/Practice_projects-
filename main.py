@@ -21,9 +21,13 @@ def user_choice1(user_choice):
         attempts_number = 0
             
         while True:
-            user_guess = input("""Try to guess the number.
-Or 'q' to exit Guessing game to choose the new range. 
-Or 'qq' to leave the programm.""")
+            user_guess = input(
+                "\n" + "#" * 38 + "\n"
+    "| Guess the number (0-10).           |\n"
+    "| 'q'  - exit to choose new range.   |\n"
+    "| 'qq' - leave the program.          |\n"
+    + "#" * 38 + "\n> "
+    )
 
             if user_guess.lower() == "q":       #exiting the guessing game 
                 return
@@ -78,8 +82,6 @@ if __name__ == "__main__":
     main()
 
                 
-
-
 
 """
 1. problem: 
